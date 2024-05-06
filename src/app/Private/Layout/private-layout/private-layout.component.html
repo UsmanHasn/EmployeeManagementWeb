@@ -1,0 +1,13 @@
+<div class="container-fluid g-0">
+  <app-header (sideNavToggled)="sideNavStatus = $event;"></app-header>
+
+  <main>
+      <app-sidebar [sideNavStatus]="sideNavStatus" [ngClass]="{'app-sidenav-open' : sideNavStatus}"></app-sidebar>
+      <div class="display-area" [ngClass]="{'display-area-shrink' : sideNavStatus}">
+          <div class="container-fluid p-3 overflow-auto" style="height: calc(100vh - 4rem);">
+              <router-outlet></router-outlet>
+          </div>
+      </div>
+  </main>
+</div>
+

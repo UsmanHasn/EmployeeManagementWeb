@@ -1,0 +1,26 @@
+
+<br/><div class="card" >
+    <div class="card-body">
+      <h5 class="card-title" style="font-weight: bold;font-size: 40px;">Login</h5>
+      <form [formGroup]="validateForm">
+       
+        <div class="mb-3">
+            <label for="email" class="form-label" style="color: black; font-weight: bold ;">Email</label>
+            <input type="email" id="email" name="email" class="form-control" formControlName="email"  placeholder="Email Required" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label" style="color: black; font-weight: bold;">Password</label>
+            <div class="input-group">
+                <input type="password" id="password" name="password" class="form-control" formControlName="password"  placeholder="Pasword Required"  required>
+                <button class="btn btn-outline-secondary" type="button" >
+                    <i class="bi bi-eye-slash"></i>
+                </button>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary active" (click)="onSubmit()" >Login</button>
+    </form>
+    <div class="text-center mt-3">
+        Already registered? <a routerLink="/login">Login here</a>
+    </div>
+    </div>
+  </div>

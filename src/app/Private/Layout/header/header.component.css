@@ -1,0 +1,48 @@
+nav {
+    height: 100%;
+  }
+  
+  .side-nav-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .side-nav-button:hover {
+    background-color: grey;
+    border-radius: 30%;
+  }
+  
+  .avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .notification-icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 10px; /* Adjust as needed */
+  }
+  
+  .notification-icon i {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .notification-icon .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.8rem;
+  }
+  .badge-custom {
+    background-color: red !important;
+    padding-left: 10px;
+    text-align: center !important;
+}

@@ -1,0 +1,52 @@
+<div class="card" >
+    <div class="card-body">
+      <h5 class="card-title">Register</h5>
+      <form [formGroup]="validateForm">
+        <div class="mb-3">
+            <label for="username" class="form-label" style="color: black; font-weight: bold ;">Name</label>
+            <input style="border: solid 1 px; color:black;" type="text" id="username" placeholder="User Name" formControlName="name" name="username" class="form-control" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="email" class="form-label" style="color: black; font-weight: bold ;">Email</label>
+            <input type="email" id="email" name="email" class="form-control" formControlName="email" placeholder="Email " required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="email" class="form-label" style="color: black; font-weight: bold ;">Address</label>
+            <input type="email" id="email" name="email" class="form-control" formControlName="address"  placeholder="Address" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label" style="color: black; font-weight: bold ;">PhoneNo</label>
+            <input type="email" id="email" name="email" class="form-control" formControlName="phoneno" placeholder="PhoneNo Required" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label" style="color: black; font-weight: bold ;">Dob</label>
+            <input type="email" id="email" name="email" class="form-control" formControlName="dob" placeholder="Dob " required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="password" class="form-label" style="color: black; font-weight: bold ;">Password</label>
+            <div class="input-group">
+                <input type="password" id="password" name="password" class="form-control" formControlName="password" placeholder="Pasword Required"  required>
+                <button class="btn btn-outline-secondary" type="button" >
+                    <i class="bi bi-eye-slash"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label" style="color: black; font-weight: bold ;">Confirm Password</label>
+            <div class="input-group">
+                <input type="password" id="password" name="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm Password"  required>
+                <button class="btn btn-outline-secondary" type="button" >
+                    <i class="bi bi-eye-slash"></i>
+                </button>
+            </div>
+        </div>
+        <button type="submit" (click)="OnSubmit()" class="btn btn-primary " >Register</button>
+    </form>
+    <div class="text-center mt-3">
+        Already registered? <a routerLink="/login">Login here</a>
+    </div>
+    </div>
+  </div>
