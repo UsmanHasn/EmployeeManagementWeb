@@ -1,0 +1,29 @@
+
+<div class="container">
+    <div class="row">
+        <p class="heading">Attendance</p>
+        <!-- app.component.html -->
+        <p-table [value]="attendence">
+            <ng-template pTemplate="header">
+                <tr class="tr">
+                    <th class="th">Id</th>
+                    <th class="th">Time In</th>
+                    <th class="th">Time Out</th>
+                    <th class="th">Created On</th>
+                    <th class="th">Total Hours</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-attendence>
+                <tr class="tr">
+                    <td class="td">{{attendence.id}}</td>
+                    <td class="td">{{attendence.timedIn}}</td>
+                    <td class="td">{{attendence.timeOut}}</td>
+                    <td class="td">{{attendence.createdOn}}</td>
+                    <td class="td">{{attendence.totalHours}}</td>
+                    
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+
+</div>

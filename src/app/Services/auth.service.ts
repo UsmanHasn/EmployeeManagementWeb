@@ -4,6 +4,8 @@ import { RegisterUser } from "../Models/RegisterUser";
 import { LoginRequest } from "../Models/LoginRequest";
 import { UserInfo } from "../Models/UserInfo";
 import { BehaviorSubject, Observable } from "rxjs";
+import { UpdateUser } from "../Models/UpdateUser";
+import { ResetUserPassword } from "../Models/ResetUserPassword";
 
 
 @Injectable({
@@ -32,6 +34,20 @@ export class AuthService {
         return userData ? JSON.parse(userData) : null;
     }
 
+    UploadProfilePicture(formData: FormData) {
+        return this.fetchWrapper.postFormRequestWithAuth('/Auth/UploadProfilePicture', formData);
+    }
 
+    UpdateUser(model: UpdateUser) {
+        return this.fetchWrapper.postRequest('/Auth/UpdateProfile', model)
+    }
 
+    LogoutUser() {
+        localStorage.removeItem("UserData")
+    }
+
+    ResetUserPassword(model: ResetUserPassword) {
+        return this.fetchWrapper.postRequest('/Auth/ResetUserPassword', model)
+
+    }
 }

@@ -6,10 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './private-layout.component.css'
 })
 export class PrivateLayoutComponent {
-  isSidebarHidden: boolean = false;
-  sideNavStatus: boolean = false;
+  sideNavStatus : boolean = false;
 
-  toggleSidebar() {
-    this.isSidebarHidden = !this.isSidebarHidden;
-  }
+
+
 }

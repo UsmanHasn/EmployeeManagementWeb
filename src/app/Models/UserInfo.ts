@@ -8,4 +8,8 @@ export class UserInfo {
     userTypeId: number = 0;
     timedIn: string = '';
     timedOut: string = '';
+    profilePic: string = '';
+    phoneNo: string = '';
+    identifier: string = '';
+    createdOn: string = ''
 }

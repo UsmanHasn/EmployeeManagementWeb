@@ -1,0 +1,56 @@
+
+/* Container styling */
+.container {
+    padding: 30px;
+}
+
+/* Custom table styling */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+/* Table border */
+.custom-table th, .custom-table td {
+    border: 1px solid #ddd;
+    /* Add border to table cells */
+    padding: 8px;
+}
+
+/* Header styling */
+.custom-table th {
+    background-color: #f2f2f2;
+    color: #333;
+    text-align: left;
+}
+
+/* Body row styling */
+.custom-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect for rows */
+.custom-table tr:hover {
+    background-color: #333;
+}
+
+.heading {
+    font-size: 30px;
+    font-weight: bold;
+    color: darkblue;
+    margin-top: -30px;
+}
+
+.tr {
+    background-color: lightgray;
+}
+
+
+
+.th {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: darkblue;
+    color: white;
+}

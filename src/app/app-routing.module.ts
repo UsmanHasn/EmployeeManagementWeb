@@ -7,6 +7,9 @@ import { ForgotPasswordComponent } from './Public/forgot-password/forgot-passwor
 import { CreatePasswordComponent } from './Public/create-password/create-password.component';
 import { PrivateLayoutComponent } from './Private/Layout/private-layout/private-layout.component';
 import { DashboardComponent } from './Private/dashboard/dashboard.component';
+import { MyAttendenceComponent } from './Private/my-attendence/my-attendence.component';
+import { LeaveRequestComponent } from './Private/leave-request/leave-request.component';
+import { ProfileComponent } from './Private/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -17,20 +20,24 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'forgot-password', component: ForgotPasswordComponent },
-      { path: 'create-password', component: CreatePasswordComponent },
-     
+
     ],
-    
+
   },
   {
     path: '', component: PrivateLayoutComponent,
 
     children: [
       { path: 'dashboard', component: DashboardComponent },
-    
-     
+      { path: 'my-attendence', component: MyAttendenceComponent },
+      { path: 'leave-request', component: LeaveRequestComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'create-password', component: CreatePasswordComponent },
+
+
+
     ],
-    
+
   }
 
 

@@ -1,0 +1,42 @@
+<div class="centered-content">
+<div class="stripe-30 pt-20 cont-sec">
+<div class="container">
+    <h1 class="header">Leave Request Form</h1>
+<form [formGroup]="validateForm" (ngSubmit)="SubmitForm()">
+  <div class="form-group">
+    <label for="leaveType">Leave Type:</label>
+    <p-dropdown formControlName="leaveTypeId" [options]="dropdown" optionLabel="title" optionValue="id"  placeholder="Select Leave Type"></p-dropdown>
+    <div *ngIf="validateForm.get('leaveTypeId')?.invalid && validateForm.get('leaveTypeId')?.touched" class="error-message">
+      Leave Type is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="fromDate">From Date:</label>
+    <p-calendar formControlName="fromDate" dateFormat="yy-mm-dd" [showIcon]="true"></p-calendar>
+    <div *ngIf="validateForm.get('fromDate')?.invalid && validateForm.get('fromDate')?.touched" class="error-message">
+      From Date is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="toDate">To Date:</label>
+    <p-calendar formControlName="toDate" dateFormat="yy-mm-dd" [showIcon]="true"></p-calendar>
+    <div *ngIf="validateForm.get('toDate')?.invalid && validateForm.get('toDate')?.touched" class="error-message">
+      To Date is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="reason">Reason:</label>
+    <textarea formControlName="reason" [style]="{'height':'150px'}"></textarea>
+    <div *ngIf="validateForm.get('reason')?.invalid && validateForm.get('reason')?.touched" class="error-message">
+      Reason is required.
+    </div>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+</div>
+</div>
+</div>

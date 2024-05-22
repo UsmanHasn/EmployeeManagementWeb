@@ -37,7 +37,6 @@ export class LoginComponent {
       this.authService.LoginUser(this.loginModel).subscribe(response => {
         this.loaderService.hide()
         if (response.statusCode === 200) {
-          debugger;
           this.currentUser = response.data
           console.log(this.currentUser)
           localStorage.setItem('UserData', JSON.stringify(this.currentUser))

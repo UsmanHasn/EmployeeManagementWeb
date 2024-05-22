@@ -18,7 +18,15 @@ import { HeaderComponent } from './Private/Layout/header/header.component';
 import { SidebarComponent } from './Private/Layout/sidebar/sidebar.component';
 import { FooterComponent } from './Private/Layout/footer/footer.component';
 import { DashboardComponent } from './Private/dashboard/dashboard.component';
-
+import { MyAttendenceComponent } from './Private/my-attendence/my-attendence.component';
+import { ProfileComponent } from './Private/profile/profile.component';
+import { NotificationsComponent } from './Private/notifications/notifications.component';
+import { LeaveRequestComponent } from './Private/leave-request/leave-request.component';
+import { TableModule } from 'primeng/table';
+import { DropdownModule } from 'primeng/dropdown';
+import { CalendarModule } from 'primeng/calendar';
+import { RouterModule } from '@angular/router';
+import { Route } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,16 +40,24 @@ import { DashboardComponent } from './Private/dashboard/dashboard.component';
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    MyAttendenceComponent,
+    ProfileComponent,
+    NotificationsComponent,
+    LeaveRequestComponent
   ],
   imports: [
+    RouterModule.forRoot([]),
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    TableModule,
+    DropdownModule,
+    CalendarModule
   ],
   providers: [
     provideClientHydration()

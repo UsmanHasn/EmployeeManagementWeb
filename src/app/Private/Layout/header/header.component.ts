@@ -27,9 +27,11 @@ export class HeaderComponent {
 
   TimeIn() {
     this.loaderService.show();
-    this.attendenceService.TimeIn(this.currentUser.id).subscribe(res => {
+    this.attendenceService.TimeIn().subscribe(res => {
       this.loaderService.hide()
       if (res.statusCode === 200) {
+        this.currentUser.timedIn = new Date().toString();
+        localStorage.setItem('UserData', JSON.stringify(this.currentUser))
         this.notify.showSuccess(res.message)
       }
       else {
@@ -40,9 +42,11 @@ export class HeaderComponent {
 
   TimeOut() {
     this.loaderService.show();
-    this.attendenceService.TimeOut(this.currentUser.id).subscribe(res => {
+    this.attendenceService.TimeOut().subscribe(res => {
       this.loaderService.hide()
       if (res.statusCode === 200) {
+        this.currentUser.timedOut = new Date().toString();
+        localStorage.setItem('UserData', JSON.stringify(this.currentUser))
         this.notify.showSuccess(res.message)
       }
       else {

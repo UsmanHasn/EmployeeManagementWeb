@@ -1,0 +1,386 @@
+.mb-2 {
+    margin-bottom: 10px !important;
+    /* Adjust the margin-bottom to move the button down */
+}
+
+.mt-1 {
+    margin-top: 20px !important;
+}
+
+a {
+
+    color: #007bff;
+    /* Default link color */
+    text-decoration: none;
+    /* Remove default underline */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    /* Smooth transition for color and text-decoration */
+}
+
+/* a:hover { */
+/* color: red;  */
+/* Change link color when hovered over */
+/* text-decoration: underline;  */
+/* Display underline when hovered over */
+/* } */
+
+
+
+#btnLogin {
+
+    display: inline-block;
+    /* Ensure the text behaves like a link */
+    color: blue;
+    /* Default text color */
+
+    padding: 5px 10px;
+    /* Add padding to create button-like appearance */
+    border: 1px solid transparent;
+    /* Add border to create button-like appearance */
+    background-color: transparent;
+    /* Set default background color to transparent */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for background color change */
+}
+
+#btnLogin:hover {
+    background-color: #212529;
+    /* Change background color when hovered over */
+    cursor: pointer;
+    /* Change cursor to pointer when hovered over */
+}
+
+.btn-primary {
+
+    /* display: inline-block;  */
+    /* Ensure the text behaves like a link */
+    color: darkcyan;
+    /* Default text color */
+
+    padding: 5px 10px;
+    /* Add padding to create button-like appearance */
+    border: 1px solid transparent;
+    /* Add border to create button-like appearance */
+    background-color: transparent;
+    /* Set default background color to transparent */
+    /* transition: background-color 0.3s ease; */
+    /* Smooth transition for background color change */
+}
+
+.btn-primary:hover {
+    background-color: #20c997;
+    /* Change background color when hovered over */
+    cursor: pointer;
+    /* Change cursor to pointer when hovered over */
+}
+
+
+
+
+
+
+
+#test {
+    background: url(#APP_FILES#64d10bcc9ed86194b6bc59fd_light-blue-backgrounds.jpg);
+    width: 100%;
+    height: 700px;
+    background-size: cover
+}
+
+.t-PageBody {
+    background: url(#APP_FILES#64d10bcc9ed86194b6bc59fd_light-blue-backgrounds.jpg);
+    width: 100%;
+    height: 700px;
+    background-size: cover
+}
+
+#t-Region-bodyWrap {
+    display: none;
+}
+
+#t-Region-body {
+    background-color: #bd6868;
+}
+
+element.style {
+    background-color: cornflowerblue;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    background-color: #212529;
+    width: 450px;
+    height: 300px;
+    margin-top: -60px;
+}
+
+.p-5 {
+    padding: 3rem !important;
+}
+
+.mt-5,
+.my-5 {
+    margin-top: 3rem !important;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+    text-align: center;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+user agent stylesheet div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    /* -webkit-text-size-adjust: 100%; */
+    -webkit-tap-highlight-color: transparent;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+element.style {
+    height: 350px;
+}
+
+.card.two {
+    border-top-right-radius: 60px;
+    border-top-left-radius: 100;
+    background: #025e42;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    background-color: #007bff;
+    width: 450px;
+    height: 300px;
+    margin-top: -60px;
+    text-align: center;
+    background: #025e42;
+}
+
+.pl-5,
+.px-5 {
+    padding-left: 3rem !important;
+}
+
+.pr-5,
+.px-5 {
+    padding-right: 3rem !important;
+}
+
+.pb-4,
+.py-4 {
+    padding-bottom: 1.5rem !important;
+}
+
+.pt-4,
+.py-4 {
+    padding-top: 1.5rem !important;
+}
+
+.mb-3,
+.my-3 {
+    margin-bottom: 1rem !important;
+}
+
+.bg-white {
+    background-color: #fff !important;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    /* background-color: #3b8db3; */
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+user agent stylesheet div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+}
+
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    /* -webkit-text-size-adjust: 100%; */
+    -webkit-tap-highlight-color: transparent;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+.mb-5 text-white {
+    text-align: center;
+
+}
+
+.form-control {
+    resize: vertical;
+    min-height: 10;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: auto;
+    background: white;
+    border: none;
+    border-radius: 0;
+    outline: 0;
+    border-bottom: 1.5px solid #E6EBEE
+}
+
+#btnLogin {
+    resize: vertical;
+    min-height: 10;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: auto;
+    font-size: large;
+    color: white;
+    background-color: #025e42;
+
+}
+
+.container {
+    text-align: center;
+}

@@ -3,6 +3,7 @@ import { AuthService } from '../../../Services/auth.service';
 import { UserInfo } from '../../../Models/UserInfo';
 import { AdminMenu, EmployeeMenu } from './menu';
 import { userInfo } from 'os';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,10 +13,10 @@ import { userInfo } from 'os';
 export class SidebarComponent {
   menuItems: { title: string, link: string, icon: string }[];
   @Input() sideNavStatus : boolean = false
-
+ 
 currentUser = new UserInfo
 
-  constructor(private authService:AuthService) {
+  constructor(private authService:AuthService, private router: Router) {
     this.currentUser = authService.getLoggedInUserData()!
     // Set menu items based on user type
     if (this.currentUser.userTypeId === 2) {
@@ -26,5 +27,10 @@ currentUser = new UserInfo
       this.menuItems = []; // Default empty menu
     }
     // this.menuItems = EmployeeMenu
+  }
+
+  logout(){
+    this.authService.LogoutUser()
+    this.router.navigate([''])
   }
 }

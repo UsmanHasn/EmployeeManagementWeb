@@ -1,12 +1,23 @@
-<div class="side-nav-content">
+<div class="side-nav-content" [ngClass]="{'close-sidebar' :sideNavStatus , 'open-sidebar' :!sideNavStatus}">
   <ul class="nav-list" [ngClass]="{'nav-list-open' : sideNavStatus}">
-    <li class="nav-list-item" [routerLink]="item.link" *ngFor="let item of menuItems">
-      <i [class]="item.icon"></i>
-      <span>
-        <a href="#">{{item.title}}</a>
-      </span>
-    </li>
+    <div *ngFor="let item of menuItems">
 
+
+      <li class="nav-list-item" [routerLink]="item.link" *ngIf="item.title !== 'Logout'">
+        <i [class]="item.icon"></i>
+        <span>
+          <a href="javascript:;">{{item.title}}</a>
+        </span>
+      </li>
+
+
+      <li (click)="logout()" class="nav-list-item" *ngIf="item.title == 'Logout'" >
+        <i [class]="item.icon"></i>
+        <span>
+          <a href="javascript:;">{{item.title}}</a>
+        </span>
+      </li>
+    </div>
 
 
   </ul>

@@ -1,0 +1,52 @@
+<div class="row">
+    <form [formGroup]="ValidateForm" class="rounded bg-white shadow p-5 row g-3">
+    
+        <div class="col-12 align-items-center">
+          <div class="col-md-4 mx-auto">
+            <img [src]="apiUrl + currentUser.profilePic" alt="Avatar Preview" class="mt-2 img-thumbnail" style="width: 200px;height:200px;" onerror="this.src='/assets/Images/noImage.jpg'">
+            <input type="file" class="form-control" id="avatarInput" (change)="onFileChange($event)" accept="image/*">
+          </div>
+        </div>
+      
+        <!-- First Name and Last Name Inputs -->
+        <div class="col-md-6">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" placeholder="First Name" formControlName="firstName">
+            <label for="floatingFirstName">First Name</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName">
+            <label for="floatingLastName">Last Name</label>
+          </div>
+        </div>
+      
+        <!-- Email Input -->
+        <div class="col-12">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" placeholder="name@example.com" formControlName="email" readonly>
+            <label for="floatingEmail">Email</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" placeholder="City" formControlName="phoneNumber">
+              <label for="floatingCity">Phone #</label>
+            </div>
+          </div>
+      
+        <!-- Address Inputs -->
+        <div class="col-md-6">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" placeholder="1234 Main St" formControlName="address">
+            <label for="floatingAddress">Address</label>
+          </div>
+        </div>
+      
+        <!-- Register Button -->
+        <div class="col-12">
+            <button class="btn btn-primary btn-lg mt-3 active" type="button" (click)="UpdateUser()">Update</button>
+        </div>
+      </form>
+  </div>
