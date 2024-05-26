@@ -27,6 +27,9 @@ export class LeaveService {
         return this.fetchWrapper.getRequest('/Leave/GetLeaveRequestTypes')
     }
 
+    GetAllMyLeaveRequests(){
+        return this.fetchWrapper.getRequest('/Leave/GetAllMyLeaveRequests')
+    }
 
 
 

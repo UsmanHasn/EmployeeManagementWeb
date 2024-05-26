@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <p class="heading">Leave Requests</p>
+        <!-- app.component.html -->
+        <p-table [value]="leaveRequests">
+            <ng-template pTemplate="header">
+                <tr class="tr">
+                    <th class="th">Requested By</th>
+                    <th class="th">Requested On</th>
+                    <th class="th">Leave Type</th>
+                    <th class="th">Leave Status</th>
+                    <th class="th">Action</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-leaveRequest>
+                <tr class="tr">
+                    <td class="td">{{leaveRequest.requestedByName}}</td>
+                    <td class="td">{{leaveRequest.createdOn}}</td>
+                    <td class="td">{{leaveRequest.leaveType}}</td>
+                    <td class="td">{{leaveRequest.leaveStatus}}</td>
+                    <td class="td"><p-button icon="pi pi-check" styleClass="p-button-success"></p-button>
+                        <p-button icon="pi pi-check" styleClass="p-button-danger"></p-button>
+                    </td>
+
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+
+</div>

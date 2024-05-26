@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { LeaveService } from '../../Services/leave.service';
-import { LoaderService } from '../../Services/loader.service';
-import { CustomToastrService } from '../../Services/customToastr.service';
-import { HttpStatusCode } from '@angular/common/http';
-import { DropdownModel } from '../../Models/DropdownModel';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AddLeave } from '../../Models/AddLeave';
+import { AddLeave } from '../../../Models/AddLeave';
+import { DropdownModel } from '../../../Models/DropdownModel';
+import { LeaveService } from '../../../Services/leave.service';
+import { LoaderService } from '../../../Services/loader.service';
+import { CustomToastrService } from '../../../Services/customToastr.service';
+
 
 @Component({
   selector: 'app-leave-request',
@@ -16,7 +16,8 @@ export class LeaveRequestComponent {
   addLeave = new AddLeave
   dropdown: DropdownModel[] = []
   validateForm!: FormGroup
-  constructor(private fb: FormBuilder, private leaveService: LeaveService, private loaderService: LoaderService, private notify: CustomToastrService) {
+  constructor(private fb: FormBuilder, private leaveService: LeaveService, private loaderService: LoaderService,
+     private notify: CustomToastrService) {
   }
 
   ngOnInit() {

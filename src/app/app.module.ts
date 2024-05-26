@@ -17,16 +17,22 @@ import { PrivateLayoutComponent } from './Private/Layout/private-layout/private-
 import { HeaderComponent } from './Private/Layout/header/header.component';
 import { SidebarComponent } from './Private/Layout/sidebar/sidebar.component';
 import { FooterComponent } from './Private/Layout/footer/footer.component';
-import { DashboardComponent } from './Private/dashboard/dashboard.component';
-import { MyAttendenceComponent } from './Private/my-attendence/my-attendence.component';
-import { ProfileComponent } from './Private/profile/profile.component';
-import { NotificationsComponent } from './Private/notifications/notifications.component';
-import { LeaveRequestComponent } from './Private/leave-request/leave-request.component';
+import { MyAttendenceComponent } from './Private/Staff/my-attendence/my-attendence.component';
+
 import { TableModule } from 'primeng/table';
 import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
 import { RouterModule } from '@angular/router';
 import { Route } from '@angular/router';
+import { DashboardComponent } from './Private/Staff/dashboard/dashboard.component';
+import { ProfileComponent } from './Private/Shared/profile/profile.component';
+import { NotificationsComponent } from './Private/Shared/notifications/notifications.component';
+import { LeaveRequestComponent } from './Private/Staff/leave-request/leave-request.component';
+import { LeaveRequestsComponent } from './Private/Admin/leave-requests/leave-requests.component';
+import { AdminDashboardComponent } from './Private/Admin/admin-dashboard/admin-dashboard.component';
+import { MyLeaveRequestsComponent } from './Private/Staff/my-leave-requests/my-leave-requests.component';
+import { AddEmployeeComponent } from './Private/Admin/add-employee/add-employee.component';
+import { ButtonModule } from 'primeng/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +50,11 @@ import { Route } from '@angular/router';
     MyAttendenceComponent,
     ProfileComponent,
     NotificationsComponent,
-    LeaveRequestComponent
+    LeaveRequestComponent,
+    LeaveRequestsComponent,
+    AdminDashboardComponent,
+    MyLeaveRequestsComponent,
+    AddEmployeeComponent
   ],
   imports: [
     RouterModule.forRoot([]),
@@ -57,7 +67,8 @@ import { Route } from '@angular/router';
     ToastrModule.forRoot(),
     TableModule,
     DropdownModule,
-    CalendarModule
+    CalendarModule,
+    ButtonModule
   ],
   providers: [
     provideClientHydration()

@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CustomToastrService } from '../../Services/customToastr.service';
-import { LoaderService } from '../../Services/loader.service';
-import { UserInfo } from '../../Models/UserInfo';
-import { AuthService } from '../../Services/auth.service';
-import { Utils } from '../../Helpers/Utils';
-import { ApiResponse } from '../../Models/ApiResponse';
-import { UpdateUser } from '../../Models/UpdateUser';
+import { UserInfo } from '../../../Models/UserInfo';
+import { UpdateUser } from '../../../Models/UpdateUser';
+import { Utils } from '../../../Helpers/Utils';
+import { CustomToastrService } from '../../../Services/customToastr.service';
+import { LoaderService } from '../../../Services/loader.service';
+import { AuthService } from '../../../Services/auth.service';
+import { ApiResponse } from '../../../Models/ApiResponse';
+
 
 @Component({
   selector: 'app-profile',
@@ -19,7 +20,8 @@ export class ProfileComponent {
   updateUser = new UpdateUser()
   apiUrl = Utils.GetApiUrl()
 
-  constructor(private fb: FormBuilder, private notify: CustomToastrService, private loaderService: LoaderService, private authService: AuthService
+  constructor(private fb: FormBuilder, private notify: CustomToastrService, private loaderService: LoaderService,
+     private authService: AuthService
 
   ) {
     this.currentUser = authService.getLoggedInUserData()!

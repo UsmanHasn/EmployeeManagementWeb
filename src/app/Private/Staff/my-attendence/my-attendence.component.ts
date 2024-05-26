@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { attendences } from './data';
-import { AttendenceViewModel } from '../../Models/AttendenceViewModel';
-import { LoaderService } from '../../Services/loader.service';
-import { CustomToastrService } from '../../Services/customToastr.service';
-import { AttendenceService } from '../../Services/attendence.service';
+import { AttendenceViewModel } from '../../../Models/AttendenceViewModel';
+import { LoaderService } from '../../../Services/loader.service';
+import { CustomToastrService } from '../../../Services/customToastr.service';
+import { AttendenceService } from '../../../Services/attendence.service';
 
 @Component({
   selector: 'app-my-attendence',

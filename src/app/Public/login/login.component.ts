@@ -42,7 +42,14 @@ export class LoginComponent {
           localStorage.setItem('UserData', JSON.stringify(this.currentUser))
           this.validateForm.reset()
           this.loginModel = new LoginRequest
-          this.router.navigate(['dashboard'])
+          if (this.currentUser.userTypeId === 1) {
+            this.router.navigate(['admin/dashboard'])
+
+          }
+          else {
+            this.router.navigate(['staff/dashboard'])
+
+          }
           this.notify.showSuccess(response.message)
         }
         else if (response.statusCode === 400) {
