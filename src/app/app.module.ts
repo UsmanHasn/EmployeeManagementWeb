@@ -33,6 +33,7 @@ import { AdminDashboardComponent } from './Private/Admin/admin-dashboard/admin-d
 import { MyLeaveRequestsComponent } from './Private/Staff/my-leave-requests/my-leave-requests.component';
 import { AddEmployeeComponent } from './Private/Admin/add-employee/add-employee.component';
 import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog'
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +69,8 @@ import { ButtonModule } from 'primeng/button';
     TableModule,
     DropdownModule,
     CalendarModule,
-    ButtonModule
+    ButtonModule,
+    DialogModule
   ],
   providers: [
     provideClientHydration()

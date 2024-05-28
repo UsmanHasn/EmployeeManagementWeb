@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './private-layout.component.css'
 })
 export class PrivateLayoutComponent {
-  sideNavStatus : boolean = false;
+  sideNavStatus : boolean = true;
 
 
 

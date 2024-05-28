@@ -1,17 +1,29 @@
 <div class="container-fluid g-0">
   <app-header (sideNavToggled)="sideNavStatus = $event;"></app-header>
-
   <main>
-    <div class="d-flex">
-        <div class="sider-bar">
-            <app-sidebar [sideNavStatus]="sideNavStatus" [ngClass]="{'app-sidenav-open' : sideNavStatus , 'app-sidenav-close' : !sideNavStatus}"></app-sidebar>
-        </div>
-        <div class="display-area" [ngClass]="{'display-area-shrink' : sideNavStatus}" > 
-            <div class="container-fluid p-3 overflow-auto" style="height: calc(100vh - 4rem);">
-                <router-outlet></router-outlet>
-            </div>
-        </div>
-    </div>
+      <div class="row">
+          <div class="sider-bar col-lg-3"
+              [ngClass]="{'app-sidenav-open' : sideNavStatus , 'app-sidenav-close' : !sideNavStatus}">
+              <!-- <p class="p-5 bg-info">private layout</p> -->
+              <app-sidebar></app-sidebar>
+          </div>
+          
+          <div class="col-lg-9" [ngClass]="{'col-lg-10' : sideNavStatus , 'col-lg-12' : !sideNavStatus}">
+              <div class="" [ngClass]="{'display-area-shrink' : sideNavStatus,'display-area' : !sideNavStatus}">
+                  <div class="container-fluid p-3 overflow-auto" style="height: calc(100vh - 0.5rem);">
+                      <router-outlet></router-outlet>
+                  </div>
+              </div>
+
+          </div>
+      </div>
   </main>
+  <!-- <main>
+      <app-sidebar [sideNavStatus]="sideNavStatus" [ngClass]="{'app-side-nav-open' : sideNavStatus}"></app-sidebar>
+      <div class="display-area" [ngClass]="{'display-area-shrink' : sideNavStatus}">
+          <div class="container-fluid p-3 overflow-auto" style="height: calc(100vh - 4rem);">
+              <router-outlet></router-outlet>
+          </div>
+      </div>
+  </main> -->
 </div>
-  

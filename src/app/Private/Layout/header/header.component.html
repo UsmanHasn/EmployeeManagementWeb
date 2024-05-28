@@ -1,20 +1,13 @@
 <nav class="navbar navbar-expand navbar-dark  px-2" style="background-color: rgb(6, 6, 94);">
   <div class="side-nav-button p-2 me-2 text-light" (click)="SideNavToggle()">
-    <header class="header white-bg">
-      <div class="sidebar-toggle-box">
-        <div class="fa-solid fa-bars tooltips" data-placement="fa-arrow-right" data-original-title="Toggle Navigation">
-        </div>
-        toggle
-      </div>
-    </header>
+    <i class="fa-solid fa-bars"></i>
   </div>
-  <a class="navbar-brand px-4" routerLink="home">My App</a>
+  <a class="navbar-brand px-4" routerLink="home">Employee Management System</a>
 
   <div>
-
-    <button *ngIf="currentUser.userTypeId === 2 && currentUser.timedIn === null " class="btn btn-primaray" type="button"
+    <button *ngIf="currentUser.userTypeId === 2 && currentUser.timedIn === null" class="btn btn-primaray" type="button"
       (click)="TimeIn()" style="background-color: white; ">Time In</button>
-    <button *ngIf="currentUser.userTypeId === 2 && currentUser.timedIn !==  null && currentUser.timedOut === null"
+    <button *ngIf="currentUser.userTypeId === 0 && currentUser.timedIn !== null && currentUser.timedOut !== null  "
       class="btn btn-primaray" type="button" (click)="TimeOut()" style="background-color: white; ">Time Out</button>
 
   </div>

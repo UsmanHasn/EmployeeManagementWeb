@@ -18,8 +18,10 @@
                     <td class="td">{{leaveRequest.createdOn}}</td>
                     <td class="td">{{leaveRequest.leaveType}}</td>
                     <td class="td">{{leaveRequest.leaveStatus}}</td>
-                    <td class="td"><p-button icon="pi pi-check" styleClass="p-button-success"></p-button>
-                        <p-button icon="pi pi-check" styleClass="p-button-danger"></p-button>
+
+                    <td class="td">
+                        <div *ngIf="leaveRequest.leaveStatusId == 1 "><p-button icon="pi pi-check" styleClass="p-button-success me-2" (click)="OpenModal(leaveRequest.identifier,2)"></p-button>
+                    <p-button icon="pi pi-times" styleClass="p-button-danger " (click)="OpenModal(leaveRequest.identifier,3)"></p-button></div>
                     </td>
 
                 </tr>
@@ -28,3 +30,18 @@
     </div>
 
 </div>
+
+<p-dialog header="Approve Leave" [(visible)]="displayModal" modal="modal" [closable]="true" [style]="{width: '50vw'}">
+    <form (ngSubmit)="ApproveOrRejectLeave()">
+      <div class="p-fluid">
+        <div class="p-field">
+          <label for="leaveReason">Admin Remarks</label>
+          <textarea id="leaveReason" rows="5" cols="30" pInputTextarea [(ngModel)]="approveOrRejectLeave.adminRemarks" name="AdminRemarks"></textarea>
+        </div>
+      </div>
+      <p-footer>
+        <p-button *ngIf="approveOrRejectLeave.statusId === 2 " type="submit" label="Approve" icon="pi pi-check" styleClass="p-button-success"></p-button>
+        <p-button *ngIf="approveOrRejectLeave.statusId === 3" type="submit" label="Reject" icon="pi pi-times" styleClass="p-button-danger"></p-button>
+      </p-footer>
+    </form>
+  </p-dialog>
