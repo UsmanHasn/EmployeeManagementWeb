@@ -8,7 +8,6 @@ import { UserInfo } from '../../../Models/UserInfo';
 import { LatestNotifications } from '../../../Models/LatestNotifications';
 import { NotificationService } from '../../../Services/notification.service';
 import { Router } from '@angular/router';
-import { Utils } from '../../../Helpers/Utils';
 
 @Component({
   selector: 'app-header',
@@ -22,10 +21,10 @@ export class HeaderComponent {
   @Output() sideNavToggled = new EventEmitter<boolean>();
   menuStatus: boolean = false
   latestNotification = new LatestNotifications();
-  apiurl = Utils.GetApiUrl();
+
   constructor(private attendenceService: AttendenceService,
     private loaderService: LoaderService, private notify: CustomToastrService,
-    private authService: AuthService, private notificationService: NotificationService, private router: Router) {
+    private authService: AuthService, private notificationService: NotificationService,private router:Router) {
     this.currentUser = this.authService.getLoggedInUserData()!
   }
 
@@ -82,29 +81,13 @@ export class HeaderComponent {
     })
   }
 
-  NavigatetoNotificationPage() {
-    if (this.currentUser.userTypeId === 1) {
+  NavigatetoNotificationPage(){
+    if(this.currentUser.userTypeId === 1){
       this.router.navigate(['/admin/notifications'])
     }
-    else if (this.currentUser.userTypeId === 2) {
+    else if(this.currentUser.userTypeId === 2){
       this.router.navigate(['/staff/notifications'])
 
     }
-  }
-
-  NavigatetoProfile() {
-    if (this.currentUser.userTypeId === 1) {
-      this.router.navigate(['/admin/profile'])
-    }
-    else if (this.currentUser.userTypeId === 2) {
-      this.router.navigate(['/staff/profile'])
-
-    }
-  }
-
-
-  logout() {
-    this.authService.LogoutUser()
-    this.router.navigate([''])
   }
 }

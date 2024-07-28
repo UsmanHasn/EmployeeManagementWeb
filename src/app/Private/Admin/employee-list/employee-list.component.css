@@ -1,0 +1,21 @@
+.heading {
+    font-size: 30px;
+    font-weight: bold;
+    color: blue;
+}
+
+.tr {
+    text-align: center;
+}
+
+.td {
+    text-align: center;
+    background-color:lightgrey;
+}
+
+.th {
+    font-weight: bold;
+    text-align: center;
+    background-color: lightblue;
+    color: black
+}

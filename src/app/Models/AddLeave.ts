@@ -1,4 +1,7 @@
 export class AddLeave {
     leaveTypeId: number = 0;
-    reasons: string = '';
+    reason: string = '';
+    leaveFromDate: Date | undefined;
+    leaveToDate: Date | undefined;
+    
 }

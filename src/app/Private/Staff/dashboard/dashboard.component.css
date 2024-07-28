@@ -522,3 +522,9 @@
     margin-bottom: 0;
   }
   
+  .p-grid {
+    margin: 0;
+  }
+  .p-col-12, .p-col-6 {
+    padding: 0.5em;
+  }

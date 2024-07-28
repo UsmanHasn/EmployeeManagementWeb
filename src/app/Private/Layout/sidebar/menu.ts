@@ -12,9 +12,11 @@ export const EmployeeMenu = [
 export const AdminMenu = [
   { title: 'Dashboard', link: '/admin/dashboard', icon: 'fa fa-home' },
   { title: 'Add New Employee', link: '/admin/add-new-employee', icon: 'fa fa-home' },
+  { title: ' Employee List', link: '/admin/employee-list', icon: 'fa fa-home' },
   { title: 'Leave Requests', link: '/admin/leave-requests', icon: 'fa-solid fa-code-pull-request' },
   { title: 'Notifications', link: '/admin/notifications', icon: 'fa-solid fa-bell' },
   { title: 'Profile', link: '/admin/profile', icon: 'fa-solid fa-user' },
   { title: 'Create Password', link: '/admin/create-password', icon: 'fa-solid fa-key' },
   { title: 'Logout', link: '/logout', icon: 'fa-solid fa-right-from-bracket' }
 ];
+

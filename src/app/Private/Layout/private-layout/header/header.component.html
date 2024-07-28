@@ -30,17 +30,4 @@
       </p-overlayPanel>
     </div>
   </div>
-
-  <p-avatar
-    [image]="apiurl+currentUser.profilePic" 
-    shape="circle" 
-    styleClass="profile-avatar" 
-    (click)="avatar.toggle($event)">
-</p-avatar>
-<p-overlayPanel #avatar>
-  <div class="profile-options">
-    <button pButton type="button" label="Profile" (click)="NavigatetoProfile();avatar.toggle($event)"></button>
-    <button pButton type="button" label="Logout" (click)="logout()"></button>
-  </div>
-</p-overlayPanel>
 </nav>

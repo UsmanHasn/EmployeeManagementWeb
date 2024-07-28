@@ -1,1 +1,71 @@
-<p>admin-dashboard works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-4 ">
+      <p-card header="Total Employee" styleClass="ui-card-shadow">
+        <ng-template pTemplate="content">
+          <p>{{admindashboard.totalEmployeeCount}}</p>
+        </ng-template>
+      </p-card>
+    </div>
+  
+    <div class="col-12 col-md-4 ">
+      <p-card header="Leave Requests Pending" styleClass="ui-card-shadow">
+        <ng-template pTemplate="content">
+          <p>{{admindashboard.pendingLeaveRequests}}</p>
+        </ng-template>
+      </p-card>
+    </div>
+  
+    <div class="col-12 col-md-4 ">
+      <p-card header="Employee On Leaves" styleClass="ui-card-shadow">
+        <ng-template pTemplate="content">
+          <p>{{admindashboard.employeeOnLeaves}}</p>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+  
+    <div class="p-col-12">
+      <p-card header="Attendence Chart" styleClass="ui-card-shadow">
+        <ng-template pTemplate="content">
+          <p-chart type="line" [data]="chartData" [options]="chartOptions"></p-chart>
+        </ng-template>
+      </p-card>
+    </div>
+  
+    <div class="p-col-12">
+      <p-card header="Leave Requests" styleClass="ui-card-shadow">
+          <!-- app.component.html -->
+          <p-table [value]="admindashboard.leaveRequests">
+            <ng-template pTemplate="header">
+              <tr class="tr">
+                <th class="th">Requested By</th>
+                <th class="th">Requested On</th>
+                <th class="th">Leave Type</th>
+                <th class="th">Leave Status</th>
+                <th class="th">Action</th>
+              </tr>
+      
+      
+            </ng-template>
+            <ng-template pTemplate="body" let-leaveRequest>
+              <tr class="tr">
+                <td class="td">{{leaveRequest.requestedByName}}</td>
+                <td class="td">{{moment.utc(leaveRequest.createdOn).format('YYYY-MMM-DD HH:mm A')}}</td>
+                <td class="td">{{leaveRequest.leaveType}}</td>
+                <td class="td">{{leaveRequest.leaveStatus}}</td>
+      
+                <td class="td">
+                  <div *ngIf="leaveRequest.leaveStatusId == 1 "><p-button icon="pi pi-check"
+                      styleClass="p-button-success me-2" (click)="OpenModal(leaveRequest.identifier,2)"></p-button>
+                    <p-button icon="pi pi-times" styleClass="p-button-danger "
+                      (click)="OpenModal(leaveRequest.identifier,3)"></p-button>
+                  </div>
+                </td>
+      
+              </tr>
+            </ng-template>
+          </p-table>
+      </p-card>
+    </div>
+  </div>

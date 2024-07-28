@@ -15,6 +15,7 @@ import { AdminDashboardComponent } from './Private/Admin/admin-dashboard/admin-d
 import { LeaveRequestsComponent } from './Private/Admin/leave-requests/leave-requests.component';
 import { MyLeaveRequestsComponent } from './Private/Staff/my-leave-requests/my-leave-requests.component';
 import { AddEmployeeComponent } from './Private/Admin/add-employee/add-employee.component';
+import { EmployeeListComponent } from './Private/Admin/employee-list/employee-list.component';
 
 
 
@@ -58,6 +59,8 @@ const routes: Routes = [
       { path: 'create-password', component: CreatePasswordComponent },
       { path: 'notifications', component: NotificationsComponent },
       { path: 'add-new-employee', component: AddEmployeeComponent },
+      { path: 'edit-employee/:identifier', component: AddEmployeeComponent },
+      { path: 'employee-list', component: EmployeeListComponent },
 
 
 

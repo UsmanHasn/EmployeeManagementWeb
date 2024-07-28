@@ -4,7 +4,7 @@ import { AttendenceViewModel } from '../../../Models/AttendenceViewModel';
 import { LoaderService } from '../../../Services/loader.service';
 import { CustomToastrService } from '../../../Services/customToastr.service';
 import { AttendenceService } from '../../../Services/attendence.service';
-
+import  * as utc  from 'moment'
 @Component({
   selector: 'app-my-attendence',
   templateUrl: './my-attendence.component.html',
@@ -12,7 +12,7 @@ import { AttendenceService } from '../../../Services/attendence.service';
 })
 export class MyAttendenceComponent {
   attendence: AttendenceViewModel[] = []
-
+  moment= utc
   constructor(private loaderService: LoaderService, private notify: CustomToastrService, private attendenceService: AttendenceService) { }
   ngOnInit(){
     this.GetAttendenceByUserId();

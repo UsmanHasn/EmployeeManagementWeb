@@ -3,7 +3,7 @@ import { LoaderService } from '../../../Services/loader.service';
 import { CustomToastrService } from '../../../Services/customToastr.service';
 import { LeaveService } from '../../../Services/leave.service';
 import { LeaveRequestViewModel } from '../../../Models/LeaveRequestViewModel';
-
+import * as utc from 'moment'
 @Component({
   selector: 'app-my-leave-requests',
   templateUrl: './my-leave-requests.component.html',
@@ -12,6 +12,7 @@ import { LeaveRequestViewModel } from '../../../Models/LeaveRequestViewModel';
 export class MyLeaveRequestsComponent {
 
   myleaveRequests: LeaveRequestViewModel[] = []
+  moment = utc
   constructor(private loaderService: LoaderService, private notify: CustomToastrService,
      private leaveService: LeaveService) { }
   ngOnInit(){

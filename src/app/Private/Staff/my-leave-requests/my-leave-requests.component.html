@@ -1,4 +1,3 @@
-
 <div class="container">
     <div class="row">
         <p class="heading">Leave Requests</p>
@@ -14,11 +13,11 @@
             </ng-template>
             <ng-template pTemplate="body" let-leaveRequest>
                 <tr class="tr">
-                    <td class="td">{{leaveRequest.createdOn}}</td>
+                    <td class="td">{{moment.utc(leaveRequest.createdOn).local().format('YYYY-MMM-DD hh:mm A')}}</td>
                     <td class="td">{{leaveRequest.leaveType}}</td>
                     <td class="td">{{leaveRequest.leaveStatus}}</td>
                     <td class="td">{{leaveRequest.approvedByName}}</td>
-                    
+
                 </tr>
             </ng-template>
         </p-table>

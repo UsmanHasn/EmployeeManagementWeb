@@ -27,8 +27,7 @@ nav {
   display: flex;
   align-items: center;
   position: relative;
-  margin-left: 10px;
-  /* Adjust as needed */
+  margin-left: 10px; /* Adjust as needed */
 }
 
 .notification-icon i {
@@ -42,18 +41,17 @@ nav {
   right: 0;
   font-size: 0.8rem;
 }
-
 .badge-custom {
   background-color: red !important;
   padding-left: 10px;
   text-align: center !important;
 }
 
-.navbar-brand {
-  font-weight: bold;
-  font-size: 25px;
-  /* justify-content: space-between; */
-  /* box-shadow: 5px 5px 5px #939393; */
+.navbar-brand{
+font-weight: bold;
+font-size: 25px;
+/* justify-content: space-between; */
+/* box-shadow: 5px 5px 5px #939393; */
 }
 
 .notification-container {
@@ -75,19 +73,4 @@ nav {
   -moz-osx-font-smoothing: grayscale;
   min-width: 50%;
   line-gap-override: 50px;
-}
-
-.profile-avatar {
-  cursor: pointer;
-}
-
-.profile-options {
-  display: flex;
-  flex-direction: column;
-
-}
-
-.profile-options button {
-  margin: 5px 0;
-
 }

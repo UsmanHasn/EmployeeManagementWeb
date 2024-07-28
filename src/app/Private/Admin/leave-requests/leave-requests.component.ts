@@ -5,7 +5,7 @@ import { AttendenceService } from '../../../Services/attendence.service';
 import { AdminService } from '../../../Services/admin.service';
 import { LeaveRequestViewModel } from '../../../Models/LeaveRequestViewModel';
 import { ApproveOrRejectLeave } from '../../../Models/ApproveOrRejectLeave';
-
+import * as utc from 'moment'
 @Component({
   selector: 'app-leave-requests',
   templateUrl: './leave-requests.component.html',
@@ -15,6 +15,8 @@ export class LeaveRequestsComponent {
   leaveRequests: LeaveRequestViewModel[] = []
   approveOrRejectLeave = new ApproveOrRejectLeave
   displayModal = false;
+ moment = utc
+
   constructor(private loaderService: LoaderService, private notify: CustomToastrService,
     private adminService: AdminService) { }
   ngOnInit() {

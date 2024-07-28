@@ -11,7 +11,7 @@ import { PublicLayoutComponent } from './Public/public-layout/public-layout.comp
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
+import { Overlay, ToastrModule } from 'ngx-toastr';
 import { LoaderComponent } from './Shared/loader/loader.component';
 import { PrivateLayoutComponent } from './Private/Layout/private-layout/private-layout.component';
 import { HeaderComponent } from './Private/Layout/header/header.component';
@@ -33,7 +33,16 @@ import { AdminDashboardComponent } from './Private/Admin/admin-dashboard/admin-d
 import { MyLeaveRequestsComponent } from './Private/Staff/my-leave-requests/my-leave-requests.component';
 import { AddEmployeeComponent } from './Private/Admin/add-employee/add-employee.component';
 import { ButtonModule } from 'primeng/button';
-import { DialogModule } from 'primeng/dialog'
+import { DialogModule } from 'primeng/dialog';
+import { EmployeeListComponent } from './Private/Admin/employee-list/employee-list.component';
+import { ToggleButtonModule} from 'primeng/togglebutton';
+import {AvatarModule} from 'primeng/avatar';
+import {TagModule} from 'primeng/tag';
+import {BadgeModule} from 'primeng/badge';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
+import {CardModule} from 'primeng/card';
+import { PaginatorModule } from 'primeng/paginator';
+import {ChartModule} from 'primeng/chart'
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +64,8 @@ import { DialogModule } from 'primeng/dialog'
     LeaveRequestsComponent,
     AdminDashboardComponent,
     MyLeaveRequestsComponent,
-    AddEmployeeComponent
+    AddEmployeeComponent,
+    EmployeeListComponent
   ],
   imports: [
     RouterModule.forRoot([]),
@@ -70,7 +80,15 @@ import { DialogModule } from 'primeng/dialog'
     DropdownModule,
     CalendarModule,
     ButtonModule,
-    DialogModule
+    DialogModule,
+    ToggleButtonModule,
+    AvatarModule,
+    TagModule,
+    BadgeModule,
+    OverlayPanelModule,
+    CardModule,
+    PaginatorModule,
+    ChartModule
   ],
   providers: [
     provideClientHydration()

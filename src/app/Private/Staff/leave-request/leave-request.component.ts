@@ -46,9 +46,12 @@ export class LeaveRequestComponent {
 
   SubmitForm() {
     if (this.validateForm.valid) {
+      console.log(this.validateForm)
       this.loaderService.show();
       this.addLeave.leaveTypeId = this.validateForm.value.leaveTypeId;
-      this.addLeave.reasons = this.validateForm.value.reason;
+      this.addLeave.reason = this.validateForm.value.reason;
+      this.addLeave.leaveFromDate = this.validateForm.value.fromDate;
+      this.addLeave.leaveToDate = this.validateForm.value.toDate;
       console.log(this.addLeave)
       this.leaveService.AddLeave(this.addLeave).subscribe(res => {
 
