@@ -49,5 +49,6 @@ export class AuthService {
     ResetUserPassword(model: ResetUserPassword) {
         return this.fetchWrapper.postRequest('/Auth/ResetUserPassword', model)
 
+        
     }
 }

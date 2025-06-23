@@ -4,6 +4,7 @@ import { LoaderService } from '../../Services/loader.service';
 import { CustomToastrService } from '../../Services/customToastr.service';
 import { AuthService } from '../../Services/auth.service';
 import { ResetUserPassword } from '../../Models/ResetUserPassword';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-password',
@@ -14,7 +15,8 @@ export class CreatePasswordComponent {
   ValidateForm!: FormGroup
   resetuserpasword = new ResetUserPassword()
 
-  constructor(private fb: FormBuilder, private loaderService: LoaderService, private notify: CustomToastrService, private authService:AuthService,) {
+  constructor(private fb: FormBuilder, private loaderService: LoaderService, private notify: CustomToastrService,
+    private authService: AuthService, private router: Router) {
 
   }
 
@@ -26,19 +28,20 @@ export class CreatePasswordComponent {
     })
   }
 
-  Submit(){
-    if(this.ValidateForm.valid){
-    this.loaderService.show();
-    this.resetuserpasword = this.ValidateForm.value
-    this.authService.ResetUserPassword(this.resetuserpasword).subscribe((res) => {
-      this.loaderService.hide();
-      if(res.statusCode === 200){
-        this.notify.showSuccess(res.message)
-      }
-      else{
-        this.notify.showError(res.message)
-      }
-    })
+  Submit() {
+    if (this.ValidateForm.valid) {
+      this.loaderService.show();
+      this.resetuserpasword = this.ValidateForm.value
+      this.authService.ResetUserPassword(this.resetuserpasword).subscribe((res) => {
+        this.loaderService.hide();
+        if (res.statusCode === 200) {
+          this.notify.showSuccess(res.message)
+          this.ValidateForm.reset()
+        }
+        else {
+          this.notify.showError(res.message)
+        }
+      })
     }
   }
 }

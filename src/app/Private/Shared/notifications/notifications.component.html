@@ -20,7 +20,7 @@
                         <p-tag [value]="notification.isSeen ? 'Read' : 'Unread' "
                             [styleClass]="notification.isSeen ? 'p-tag-success' : 'p-tag-danger'"></p-tag>
                     </td>
-                    <td class="td">{{moment.utc(notification.createdOn).format('YYYY-MMM-DD HH:mm A')}}</td>
+                    <td class="td">{{moment.utc(notification.createdOn).format('YYYY-MMM-DD hh:mm A')}}</td>
 
                 </tr>
             </ng-template>

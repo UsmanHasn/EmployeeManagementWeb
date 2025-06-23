@@ -58,7 +58,7 @@ max-height: 450px; */
 .form-control-custom {
   background-color: lightgray;
   color: black; /* Optional: change text color */
-  border: 1px solid #ccc; /* Optional: Add border styling */
+  border: 1px solid #945050; /* Optional: Add border styling */
   padding: 10px; /* Optional: Add padding */
   border-radius: 4px; /* Optional: Add border radius */
   
@@ -79,7 +79,7 @@ max-height: 450px; */
   /* border: var(--bs-border-width) solid blue; */
   border-radius: var(--bs-border-radius);
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-  background-color: lightgray;
+  background-color: rgba(193, 189, 189, 0.925);
 }
 
 .scrollable-form-container {

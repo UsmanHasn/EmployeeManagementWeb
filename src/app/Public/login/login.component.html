@@ -23,18 +23,41 @@
                 <input type="email" id="email" name="email" class="form-control" formControlName="email"
                     placeholder="User ID" onfocus="this.style.background='#FFEEA8';"
                     onblur="this.style.background='white';">
-                   
 
+                <div *ngIf="validateForm.get('email')?.invalid && validateForm.get('email')?.touched"
+                    class="error-message">
+                    <span style="color:red;" *ngIf="email?.hasError('required')">
+                        Email is Required</span>
+                    <span style="color:red;" *ngIf="email?.hasError('pattern')">
+                        Only Email are allowed</span>
+
+                </div>
 
             </div>
 
             <br><br>
-            <div class="form-group">
-                <input type="password" id="password" name="password" class="form-control" formControlName="password"
-                    placeholder="Password" onfocus="this.style.background='#FFEEA8';"
-                    onblur="this.style.background='white';">
+            <div class="form-group position-relative">
+                <input [type]="isPasswordVisible ? 'text' : 'password'" id="password" name="password"
+                    class="form-control" formControlName="password" placeholder="Password"
+                    onfocus="this.style.background='#FFEEA8';" onblur="this.style.background='white';">
 
+
+                <div *ngIf="validateForm.get('password')?.invalid && validateForm.get('password')?.touched"
+                    class="error-message">
+                    <span style="color:red;" *ngIf="password?.hasError('required')">
+                        Password is Required</span>
+
+                    <span style="color:red;" *ngIf="password?.hasError('minlength')">
+                        minimum 8 character are Allowed</span>
+
+                </div>
+
+                <!-- Eye icon -->
+                <i [ngClass]="isPasswordVisible ? 'fa fa-eye-slash' : 'fa fa-eye'" class="position-absolute"
+                    style="top: 50%; right: 10px; cursor: pointer; transform: translateY(-50%);"
+                    (click)="togglePasswordVisibility()"></i>
             </div>
+
             <button type="submit" id="btnLogin" (click)="onSubmit()" class="btn btn-primary btn-lg mt-1 mb-2">
                 <span>Login <span style="font-size: 15px;" aria-hidden="true"
                         class="fa fa-arrow-right fa-lg"></span></span>
@@ -44,5 +67,6 @@
                 Forgot Password?
             </a>
         </div>
+
     </form>
 </div>

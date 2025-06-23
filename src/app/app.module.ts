@@ -42,7 +42,12 @@ import {BadgeModule} from 'primeng/badge';
 import {OverlayPanelModule} from 'primeng/overlaypanel';
 import {CardModule} from 'primeng/card';
 import { PaginatorModule } from 'primeng/paginator';
-import {ChartModule} from 'primeng/chart'
+import {ChartModule} from 'primeng/chart';
+import { DepartmentsListComponent } from './Private/Admin/departments-list/departments-list.component';
+import { DesignationListComponent } from './Private/Admin/designation-list/designation-list.component';
+import { AddDepartmentsComponent } from './Private/Admin/add-departments/add-departments.component';
+import { AddDesignationComponent } from './Private/Admin/add-designation/add-designation.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +70,11 @@ import {ChartModule} from 'primeng/chart'
     AdminDashboardComponent,
     MyLeaveRequestsComponent,
     AddEmployeeComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    DepartmentsListComponent,
+    DesignationListComponent,
+    AddDepartmentsComponent,
+    AddDesignationComponent
   ],
   imports: [
     RouterModule.forRoot([]),

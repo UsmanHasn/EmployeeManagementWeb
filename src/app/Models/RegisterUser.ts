@@ -6,7 +6,8 @@ export class RegisterUser {
     address: string = '';
     phoneNo: string = '';
     profilePictureUrl: string = '';
-    dob: Date | undefined
-        ;
+    dob: Date | undefined;
+    
+        
 }
 

@@ -16,7 +16,9 @@ import { LeaveRequestsComponent } from './Private/Admin/leave-requests/leave-req
 import { MyLeaveRequestsComponent } from './Private/Staff/my-leave-requests/my-leave-requests.component';
 import { AddEmployeeComponent } from './Private/Admin/add-employee/add-employee.component';
 import { EmployeeListComponent } from './Private/Admin/employee-list/employee-list.component';
-
+import { DepartmentsListComponent } from './Private/Admin/departments-list/departments-list.component';
+import { DesignationListComponent } from './Private/Admin/designation-list/designation-list.component';
+import { AddDepartmentsComponent } from './Private/Admin/add-departments/add-departments.component';
 
 
 const routes: Routes = [
@@ -40,6 +42,7 @@ const routes: Routes = [
       { path: 'notifications', component: NotificationsComponent },
       { path: 'my-attendence', component: MyAttendenceComponent },
       { path: 'add-leave-request', component: LeaveRequestComponent },
+      { path: 'edit-leave-request/:identifier', component: LeaveRequestComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'create-password', component: CreatePasswordComponent },
       { path: 'my-leave-requests', component: MyLeaveRequestsComponent },
@@ -59,8 +62,11 @@ const routes: Routes = [
       { path: 'create-password', component: CreatePasswordComponent },
       { path: 'notifications', component: NotificationsComponent },
       { path: 'add-new-employee', component: AddEmployeeComponent },
+      { path: 'add-departments', component: AddDepartmentsComponent },
       { path: 'edit-employee/:identifier', component: AddEmployeeComponent },
       { path: 'employee-list', component: EmployeeListComponent },
+      { path: 'departments-list', component: DepartmentsListComponent },
+      { path: 'designation-list', component: DesignationListComponent },
 
 
 
@@ -68,7 +74,7 @@ const routes: Routes = [
 
   }
   
-
+  
 
 ];
 

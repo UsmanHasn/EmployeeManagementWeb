@@ -11,6 +11,8 @@ import { RegisterUser } from '../../../Models/RegisterUser';
 import { AdminService } from '../../../Services/admin.service';
 import { UserViewModel } from '../../../Models/UserViewModel';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DropdownModel } from '../../../Models/DropdownModel';
+import { CommonService } from '../../../Services/common.service';
 
 @Component({
   selector: 'app-add-employee',
@@ -26,10 +28,13 @@ export class AddEmployeeComponent {
   apiUrl = Utils.GetApiUrl()
   profilePic = ''
   employeeIdentifier = ''
+    departmentDropdown: DropdownModel[] = []
+    designationDropdown: DropdownModel[] = []
+  
 
   constructor(private fb: FormBuilder, private notify: CustomToastrService, private loaderService: LoaderService,
     private authService: AuthService, private adminService: AdminService,
-    private router: Router, private route: ActivatedRoute
+    private router: Router, private route: ActivatedRoute,private commonService:CommonService
 
   ) {
     // this.currentUser = authService.getLoggedInUserData()!
@@ -40,6 +45,7 @@ export class AddEmployeeComponent {
 
 
   ngOnInit() {
+    this.GetDropDownForDepartment();
     this.ValidateForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -48,7 +54,7 @@ export class AddEmployeeComponent {
       address: ['', Validators.required],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
-
+      departmentId:['',Validators.required]
 
     })
 
@@ -135,6 +141,19 @@ export class AddEmployeeComponent {
     }
   }
 
+  GetDropDownForDepartment() {
+    this.loaderService.show();
+    this.commonService.GetDropDownForDepartment().subscribe(res => {
+      this.loaderService.hide();
+      if (res.statusCode === 200) {
+        this.departmentDropdown = res.data
+      }
+      else {
+        this.notify.showError(res.message)
+
+      }
+    })
+  }
 
 
   onFileChange(event: any) {

@@ -1,63 +1,63 @@
-  <div class="stripe-30 pt-20 cont-sec" style="text-align: left;">
-    <div class="container">
-      <div class="text-left mb-2">
-        <h3 style="font-size: 35px; font-weight: bold; color:darkblue">Leave Request Form</h3>
-      </div>
+<div class="stripe-30 pt-20 cont-sec" style="text-align: left; background-color: lightgray;">
+  <div class="container scrollable-form-container">
+   <div class="text-left mb-2">
+     <h3 style="color: blue; font-weight: bold; font-size: 30px;" class="card-title">Leave Request Form</h3>
+   </div>
 
-      <form class="leaveRequest" [formGroup]="validateForm" (ngSubmit)="SubmitForm()">
-        <div class="row">
-          <div class="form-group col-md-5 mt-3">
-            <label for="leaveType" class="label">Leave Type:</label>
-            <br>
-            <p-dropdown class="dropdown1 form-control" class="form-control" formControlName="leaveTypeId"
-              [options]="dropdown" optionLabel="title" optionValue="id" placeholder="Select Leave Type"></p-dropdown>
-            <div *ngIf="validateForm.get('leaveTypeId')?.invalid && validateForm.get('leaveTypeId')?.touched"
-              class="error-message">
-              Leave Type is required.
-            </div>
-          </div>
-        </div>
+   <form class="leaveRequest" [formGroup]="validateForm" (ngSubmit)="SubmitForm()">
+     <div class="row">
+       <div class="form-group col-md-5 mt-3">
+         <label for="leaveType" class="label">Leave Type:</label>
+         <br>
+         <p-dropdown class="dropdown1 form-control form-control-custom" class="form-control" formControlName="leaveTypeId"
+           [options]="dropdown" optionLabel="title" optionValue="id" placeholder="----Select Leave Type----" [style]="{'width.px': 235,}"></p-dropdown>
+         <div *ngIf="validateForm.get('leaveTypeId')?.invalid && validateForm.get('leaveTypeId')?.touched"
+           class="error-message">
+           Leave Type is required.
+         </div>
+       </div>
+     </div>
 
-        <div class="row">
-          <div class="form-group  col-md-5 mt-3">
-            <label for="fromDate" class="label">From Date:</label>
-            <br>
-            <p-calendar formControlName="fromDate" class="form-control" dateFormat="yy-mm-dd" [showIcon]="true"></p-calendar>
-            <div *ngIf="validateForm.get('fromDate')?.invalid && validateForm.get('fromDate')?.touched"
-              class="error-message">
-              From Date is required.
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group  col-md-5 mt-3">
-            <label for="toDate" class="label">To Date:</label>
-            <br>
-            <p-calendar formControlName="toDate" class="form-control" dateFormat="yy-mm-dd" [showIcon]="true"></p-calendar>
-            <div *ngIf="validateForm.get('toDate')?.invalid && validateForm.get('toDate')?.touched"
-              class="error-message">
-              To Date is required.
-            </div>
-          </div>
-        </div>
-        <div class="row">
+     <div class="row">
+       <div class="form-group  col-md-5 mt-3">
+         <label for="fromDate" class="label">From Date:</label>
+         <br>
+         <p-calendar formControlName="fromDate" class="form-control" dateFormat="yy-mm-dd" [showIcon]="true"></p-calendar>
+         <div *ngIf="validateForm.get('fromDate')?.invalid && validateForm.get('fromDate')?.touched"
+           class="error-message">
+           From Date is required.
+         </div>
+       </div>
+     </div>
+     <div class="row">
+       <div class="form-group  col-md-5 mt-3">
+         <label for="toDate" class="label">To Date:</label>
+         <br>
+         <p-calendar formControlName="toDate" class="form-control" dateFormat="yy-mm-dd" [showIcon]="true"></p-calendar>
+         <div *ngIf="validateForm.get('toDate')?.invalid && validateForm.get('toDate')?.touched"
+           class="error-message">
+           To Date is required.
+         </div>
+       </div>
+     </div>
+     <div class="row">
 
-          <div class="form-group  col-md-5 mt-3">
-            <label for="reason" class="label">Reason:</label><br>
-            <textarea class="textarea" formControlName="reason" [style]="{'height':'150px'}"></textarea>
-            <div *ngIf="validateForm.get('reason')?.invalid && validateForm.get('reason')?.touched"
-              class="error-message">
-              Reason is required.
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-6">
-            <div class="col-md-3">
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-      </div>
-        </div>
-      </form>
-    </div>
-  </div>
+       <div class="form-group  col-md-5 mt-3">
+         <label for="reason" class="label">Reason:</label><br>
+         <textarea class="textarea" formControlName="reason" [style]="{'height':'170px'}"></textarea>
+         <div *ngIf="validateForm.get('reason')?.invalid && validateForm.get('reason')?.touched"
+           class="error-message">
+           Reason is required.
+         </div>
+       </div>
+     </div>
+     <div class="row">
+       <div class="form-group col-md-6">
+         <div class="col-md-3">
+       <button type="submit" class="btn btn-primary">Submit</button>
+     </div>
+   </div>
+     </div>
+   </form>
+ </div>
+</div>

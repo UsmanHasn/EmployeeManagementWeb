@@ -5,6 +5,7 @@ import { DropdownModel } from '../../../Models/DropdownModel';
 import { LeaveService } from '../../../Services/leave.service';
 import { LoaderService } from '../../../Services/loader.service';
 import { CustomToastrService } from '../../../Services/customToastr.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class LeaveRequestComponent {
   dropdown: DropdownModel[] = []
   validateForm!: FormGroup
   constructor(private fb: FormBuilder, private leaveService: LeaveService, private loaderService: LoaderService,
-     private notify: CustomToastrService) {
+     private notify: CustomToastrService, private router:Router) {
   }
 
   ngOnInit() {
@@ -58,6 +59,7 @@ export class LeaveRequestComponent {
         this.loaderService.hide();
         if (res.statusCode === 200) {
           this.notify.showSuccess(res.message)
+          this.router.navigate(['/staff/my-leave-requests'])
 
         }
         else {

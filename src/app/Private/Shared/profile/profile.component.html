@@ -1,13 +1,15 @@
+<div class="stripe-30 pt-20 cont-sec" >
+  <div class="container scrollable-form-container" >
+   
 <div class="row">
-    <form [formGroup]="ValidateForm" class="rounded bg-white shadow p-5 row g-3">
-    
+    <form [formGroup]="ValidateForm" class="rounded bg-lightgray shadow p-2 row g-1" style="background-color: lightgray;">
+      <h5 style="color: blue; font-weight: bold; font-size: 30px; text-align: left; " class="card-title">Employee Profile </h5>
         <div class="col-12 align-items-center">
           <div class="col-md-4 mx-auto">
             <img [src]="apiUrl + currentUser.profilePic" alt="Avatar Preview" class="mt-2 img-thumbnail" style="width: 200px;height:200px;" onerror="this.src='/assets/Images/noImage.jpg'">
             <input type="file" class="form-control" id="avatarInput" (change)="onFileChange($event)" accept="image/*">
           </div>
         </div>
-      
         <!-- First Name and Last Name Inputs -->
         <div class="col-md-6">
           <div class="form-floating mb-3">
@@ -49,4 +51,5 @@
             <button class="btn btn-primary btn-lg mt-3 active" type="button" (click)="UpdateUser()">Update</button>
         </div>
       </form>
+  </div>
   </div>

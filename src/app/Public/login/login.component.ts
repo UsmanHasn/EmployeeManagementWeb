@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginRequest } from '../../Models/LoginRequest';
 import { AuthService } from '../../Services/auth.service';
 import { response } from 'express';
@@ -20,12 +20,27 @@ export class LoginComponent {
   constructor(private fb: FormBuilder, private authService: AuthService, private notify: CustomToastrService,
     private loaderService: LoaderService, private router: Router) { }
 
-  ngOnInit() {
-    this.validateForm = this.fb.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-    })
+    ngOnInit() {
+      this.validateForm = this.fb.group({
+        email: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern(
+              '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}'
+            ),
+          ],
+        ],
+        password: ['', [Validators.required, Validators.minLength(8)]],
+      });
+    }
+
+  isPasswordVisible = false;
+
+  togglePasswordVisibility(): void {
+    this.isPasswordVisible = !this.isPasswordVisible;
   }
+
 
   onSubmit() {
     console.log(this.validateForm)
@@ -67,4 +82,11 @@ export class LoginComponent {
     }
   }
 
+  get email(): FormControl {
+    return this.validateForm.get('email') as FormControl;
+  }
+
+  get password(): FormControl {
+    return this.validateForm.get('password') as FormControl;
+  }
 }

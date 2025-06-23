@@ -11,4 +11,8 @@ export class LeaveRequestViewModel {
     requestedByIdentifier: string = '';
     approvedByName: string = '';
     approvedByIdentifier: string = '';
+    leavesFromDate: Date | undefined;
+    leavesToDate: Date | undefined;
+    reason: string = ''
+    
 }

@@ -2,7 +2,7 @@
     <div class="row">
         <p class="heading">Leave Requests</p>
         <!-- app.component.html -->
-        <p-table [value]="myleaveRequests">
+        <p-table [value]="myleaveRequests" [paginator]="true" [rows]="7" [rowsPerPageOptions]="[5,10,15]">
             <ng-template pTemplate="header">
                 <tr class="tr">
                     <th class="th">Requested On</th>

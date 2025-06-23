@@ -1,0 +1,57 @@
+<div class="stripe-30 pt-20 cont-sec" style="text-align: left; background-color: lightgray;">
+  <div class="container scrollable-form-container">
+    <div class="text-left mb-2">
+      <h3 style="color: blue; font-weight: bold; font-size: 30px;" class="card-title">Add Department</h3>
+    </div>
+
+    <form class="departmentForm" [formGroup]="validateForm" (ngSubmit)="SubmitForm()">
+
+      <!-- Name Field -->
+      <div class="row">
+        <div class="form-group col-md-5 mt-3">
+          <label for="name" class="label">Name:</label><br>
+          <input type="text" class="form-control" formControlName="Name" placeholder="Enter department name">
+          <!-- <div *ngIf="validateForm.get('name')?.invalid && validateForm.get('name')?.touched" class="error-message">
+            Name is required.
+          </div> -->
+        </div>
+      </div>
+
+      <br>
+      <!-- IsActive Field -->
+      <div class="row">
+        <div class="form-group col-md-5 mt-3">
+          <label for="isActive" class="label" style="margin-top: -3px;">Is Active:</label>
+
+          <input class="form-check-input larger-checkbox" style="margin-left: 10px;font-size: 20px;" type="checkbox" maxlength="20" formControlName="isActive">
+          <!-- <p-checkbox  formControlName="isActive" type="checkbox"></p-checkbox> -->
+        </div>
+      </div>
+
+      <br>
+      <!-- Created On Field -->
+      <div class="row">
+        <div class="form-group col-md-5 mt-3">
+          <label for="createdOn" class="label">Created On:</label>
+          <input type="text" class="form-control" formControlName="createdOn" dateformat="yy-mm-dd" placeholder="Created Date">
+
+          <!-- <p-calendar formControlName="createdOn" class="form-control" dateFormat="yy-mm-dd"
+            [showIcon]="true"></p-calendar> -->
+          <!-- <div *ngIf="validateForm.get('createdOn')?.invalid && validateForm.get('createdOn')?.touched" class="error-message"> 
+            Created Date is required.
+          </div> -->
+        </div>
+      </div>
+<br>
+      <!-- Submit Button -->
+      <div class="row">
+        <div class="form-group col-md-6 mt-3">
+          <div class="col-md-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

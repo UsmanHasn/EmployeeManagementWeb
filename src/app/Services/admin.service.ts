@@ -3,6 +3,7 @@ import { FetchWrapper } from "../Helpers/fetch_Wrapper";
 import { ApproveOrRejectLeave } from "../Models/ApproveOrRejectLeave";
 import { ToggleStatus } from "../Models/ToggleStatus";
 import { UserViewModel } from "../Models/UserViewModel";
+import { AddDepartment } from "../Models/AddDepartment";
 
 
 
@@ -51,5 +52,17 @@ export class AdminService {
         return this.fetchWrapper.getRequest('/Admin/GetAdminDashboard')
     }
 
+    GetAllDepartment() {
+        return this.fetchWrapper.getRequest('/Admin/GetAllDepartments');
+    }
 
-}
+
+    GetAllDesignation() {
+        return this.fetchWrapper.getRequest('/Admin/GetAllDesignations');
+    }
+
+    Adddepartment(model: UserViewModel) {
+        return this.fetchWrapper.postRequest('/Admin/AddDepartment', model)
+    }
+
+}   
